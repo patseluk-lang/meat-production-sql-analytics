@@ -1,0 +1,10 @@
+# Generated full dataset (regenerate with: python data/generate.py).
+# A small illustrative sample is committed under data/csv_sample/.
+data/csv/
+
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.idea/

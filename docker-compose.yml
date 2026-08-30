@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: meat
+      POSTGRES_PASSWORD: meat
+      POSTGRES_DB: meat
+      # a UTF-8 locale so month names / Ukrainian text sort and print correctly
+      LANG: C.UTF-8
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/initdb.sh:/docker-entrypoint-initdb.d/initdb.sh:ro
+      - ./sql:/sql:ro
+      - ./data/csv:/csv:ro
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U meat -d meat"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  pgdata:

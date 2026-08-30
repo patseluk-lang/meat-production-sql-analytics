@@ -1,0 +1,3 @@
+# Only needed to (re)generate the synthetic dataset. The database itself runs
+# in Docker and needs nothing from Python.
+Faker==40.37.0
