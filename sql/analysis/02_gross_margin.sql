@@ -1,4 +1,3 @@
--- ============================================================================
 -- Q2. Gross margin by product category and sales channel.
 --
 -- Cost of goods is the material cost from the bill of materials (dim_product.
@@ -6,7 +5,6 @@
 -- is the contribution over materials. GROUPING SETS produces the category ×
 -- channel matrix together with per-category, per-channel and grand-total
 -- subtotals in a single pass.
--- ============================================================================
 SELECT COALESCE(dp.category, '→ ВСІ категорії')          AS category,
        COALESCE(dc.channel, '→ ВСІ канали')              AS channel,
        ROUND(SUM(fs.revenue))                            AS revenue,

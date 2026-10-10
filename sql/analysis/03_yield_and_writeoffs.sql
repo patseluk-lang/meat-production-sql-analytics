@@ -1,11 +1,9 @@
--- ============================================================================
 -- Q3. Production yield (actual vs planned) and write-off (spoilage) rate.
 --
 -- Two management questions in one place:
 --   * Are batches hitting planned output? (yield = actual / planned)
 --   * How much finished product is written off, relative to what was made?
 -- Short-shelf-life lines (pate, grill) should show the highest write-off rate.
--- ============================================================================
 
 -- 3a. Worst product-months by write-off rate (where to act first).
 WITH prod AS (

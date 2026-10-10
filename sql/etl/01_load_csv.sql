@@ -1,8 +1,6 @@
--- ============================================================================
 -- Load the generated CSVs into the OLTP tables. Server-side COPY reads from
 -- /csv, which docker-compose mounts from ./data/csv. Empty fields (e.g. an
 -- open-ended price validity, an undelivered shipment) load as NULL.
--- ============================================================================
 TRUNCATE write_offs, shipments, order_items, orders, production_batches,
     prices, bom, clients, products, ingredients RESTART IDENTITY CASCADE;
 

@@ -1,8 +1,6 @@
--- ============================================================================
 -- Analytical layer: a star schema. Facts hold measures at a single grain;
 -- dimensions hold the descriptive attributes to slice by. Populated by
 -- sql/etl/02_build_star.sql entirely with SQL (no application code).
--- ============================================================================
 DROP TABLE IF EXISTS fact_sales, fact_production,
     dim_date, dim_product, dim_client, dim_channel CASCADE;
 

@@ -1,4 +1,3 @@
--- ============================================================================
 -- Q4. Sales seasonality and trend.
 --
 -- 4a. Monthly revenue with a 3-month moving average (to smooth noise) and
@@ -7,7 +6,6 @@
 -- 4b. Seasonal index per calendar month: average revenue of that month vs the
 --     overall monthly average (100 = typical month). Quantifies the December
 --     peak and January trough for production planning.
--- ============================================================================
 
 -- 4a. Trend + moving average + YoY
 WITH monthly AS (

@@ -1,10 +1,8 @@
--- ============================================================================
 -- Q7. Pareto (80/20) analysis of clients.
 --
 -- Rank clients by revenue and accumulate their share. Answers: what fraction of
 -- clients generates 80% of revenue? Concentration risk and where key-account
 -- attention should go. Technique: window running total + share of grand total.
--- ============================================================================
 WITH client_rev AS (
     SELECT client_key, SUM(revenue) AS revenue
     FROM fact_sales

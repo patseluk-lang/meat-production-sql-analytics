@@ -1,7 +1,5 @@
--- ============================================================================
 -- OLTP source layer (normalized). This is the "system of record" the business
 -- would run day to day; the analytical star schema is derived from it by ETL.
--- ============================================================================
 DROP TABLE IF EXISTS write_offs, shipments, order_items, orders,
     production_batches, prices, bom, clients, products, ingredients CASCADE;
 

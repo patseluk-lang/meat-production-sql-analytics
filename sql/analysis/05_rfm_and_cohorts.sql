@@ -1,4 +1,3 @@
--- ============================================================================
 -- Q5. B2B client value: RFM segmentation + cohort retention.
 --
 -- 5a. RFM — score every client 1..5 on Recency, Frequency and Monetary
@@ -7,7 +6,6 @@
 -- 5b. Cohort retention — group clients by the month of their first order and
 --     track how many order again N months later. A recursive CTE generates the
 --     0..12 month offsets so months with zero activity still appear.
--- ============================================================================
 
 -- 5a. RFM segmentation
 WITH base AS (

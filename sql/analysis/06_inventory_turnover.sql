@@ -1,4 +1,3 @@
--- ============================================================================
 -- Q6. Inventory turnover and days of supply.
 --
 -- With no stored stock level, on-hand is reconstructed as a running balance
@@ -8,7 +7,6 @@
 --   * days_of_supply     — how many days the average stock would last
 -- Slow movers (low turnover, high days of supply) tie up cash and risk
 -- spoilage; fast movers may need bigger safety stock.
--- ============================================================================
 WITH flow AS (
     SELECT product_key, date_key AS d,  actual_kg AS delta FROM fact_production
     UNION ALL

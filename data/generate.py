@@ -49,9 +49,7 @@ while (_y, _m) <= (END.year, END.month):
 SEASON = {1: 0.70, 2: 0.85, 3: 0.95, 4: 1.00, 5: 1.05, 6: 1.10,
           7: 1.10, 8: 1.05, 9: 1.00, 10: 1.05, 11: 1.20, 12: 1.55}
 
-# ---------------------------------------------------------------------------
 # Reference data
-# ---------------------------------------------------------------------------
 INGREDIENTS = [
     # name, unit, cost_per_kg (UAH)
     ("Свинина (лопатка)", "kg", 180),
@@ -133,7 +131,7 @@ def main() -> None:
         w.writerow(header)
         return f, w
 
-    # --- ingredients ---
+    # ingredients
     ing_id = {}
     f, w = writer("ingredients.csv", ["id", "name", "unit", "cost_per_unit"])
     for i, (name, unit, cost) in enumerate(INGREDIENTS, 1):
@@ -141,7 +139,7 @@ def main() -> None:
         w.writerow([i, name, unit, cost])
     f.close()
 
-    # --- products, bom, prices ---
+    # products, bom, prices
     fp, wp = writer("products.csv", ["id", "sku", "name", "category", "shelf_life_days", "launch_date"])
     fb, wb = writer("bom.csv", ["id", "product_id", "ingredient_id", "qty_per_kg"])
     fpr, wpr = writer("prices.csv", ["id", "product_id", "price", "valid_from", "valid_to"])
@@ -182,7 +180,7 @@ def main() -> None:
                 chosen = price
         return chosen
 
-    # --- clients ---
+    # clients
     fc, wc = writer("clients.csv", ["id", "name", "channel", "region", "since"])
     clients = []
     N_CLIENTS = 300
@@ -210,7 +208,7 @@ def main() -> None:
                         "size": size, "since": since, "until": until})
     fc.close()
 
-    # --- orders + order_items + shipments ---
+    # orders + order_items + shipments
     fo, wo = writer("orders.csv", ["id", "client_id", "order_date"])
     fi, wi = writer("order_items.csv", ["id", "order_id", "product_id", "qty_kg", "unit_price"])
     fs, ws = writer("shipments.csv", ["id", "order_id", "shipped_date", "delivered_date", "status"])
@@ -275,7 +273,7 @@ def main() -> None:
                              status])
     fo.close(); fi.close(); fs.close()
 
-    # --- production_batches + write_offs ---------------------------------------
+    # production_batches + write_offs
     # Production is DEMAND-DRIVEN so the dataset stays internally consistent:
     # a product is made ~15% above what it sells each month, plus an opening
     # stock, so cumulative production stays ahead of sales and the inventory /

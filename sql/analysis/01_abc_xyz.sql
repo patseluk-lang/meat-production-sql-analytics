@@ -1,4 +1,3 @@
--- ============================================================================
 -- Q1. ABC/XYZ analysis of the product range.
 --
 -- ABC: which SKUs generate the revenue? Class A = top SKUs making up to 80% of
@@ -8,7 +7,6 @@
 --
 -- The ABC/XYZ matrix tells you where to guarantee availability (AX) and where
 -- to cut safety stock or delist (CZ). Technique: window running totals.
--- ============================================================================
 WITH product_rev AS (
     SELECT product_key, SUM(revenue) AS revenue
     FROM fact_sales

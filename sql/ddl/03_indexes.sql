@@ -1,7 +1,5 @@
--- ============================================================================
 -- Indexes for the analytical workload. Created after the bulk load so the
 -- COPY stays fast. See reports/explain/ for EXPLAIN ANALYZE before/after.
--- ============================================================================
 
 -- Fact tables: the columns joined to dimensions and filtered by date.
 CREATE INDEX IF NOT EXISTS ix_fact_sales_date     ON fact_sales (date_key);
