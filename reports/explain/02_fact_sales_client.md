@@ -29,5 +29,5 @@ SELECT SUM(revenue), COUNT(*) FROM fact_sales WHERE client_key = 42;
 
 ```
 
-Result: execution time ~7.8 ms → ~0.4 ms (~18x faster) on this selective
+Result: execution time ~4.6 ms → ~0.4 ms (~10x faster) on this selective
 predicate; Seq Scan is replaced by a Bitmap Index Scan.
