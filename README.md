@@ -125,7 +125,7 @@ Full write-up in [`reports/findings.md`](reports/findings.md).
 
 Two representative queries show the planner switching from a full **Seq Scan**
 to a **Bitmap Index Scan** once the fact-table index is added — the
-client-filter query drops from **~7.8 ms to ~0.4 ms (~18×)**. Full plans in
+client-filter query drops from **~4.6 ms to ~0.4 ms (~10×)**. Full plans in
 [`reports/explain/`](reports/explain).
 
 ## Project structure
