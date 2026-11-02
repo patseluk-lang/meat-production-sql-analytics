@@ -34,5 +34,5 @@ FROM fact_sales WHERE product_key = 7 GROUP BY 1;
 
 ```
 
-Result: execution time ~5.9 ms → ~2.5 ms; the planner switches from a full
-Seq Scan (~1768 cost) to a Bitmap Index Scan (~938 cost).
+Result: execution time ~5.2 ms → ~2.4 ms (~2x faster); the planner switches
+from a full Seq Scan (~1768 cost) to a Bitmap Index Scan (~938 cost).
