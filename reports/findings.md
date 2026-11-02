@@ -56,5 +56,5 @@ per kg. Turnover was reconstructed from the movement ledger with a running
 
 *Performance note:* two representative queries show a Seq Scan replaced by a
 Bitmap Index Scan after adding an index — see
-[`reports/explain/`](explain). The client-filter query drops from ~7.8 ms to
-~0.4 ms (~18×).
+[`reports/explain/`](explain). The client-filter query drops from ~4.6 ms to
+~0.4 ms (~10×).
